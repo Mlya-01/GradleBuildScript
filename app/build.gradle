@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+
     namespace 'com.example.gradlebuildscript'
     compileSdk 33
 
@@ -17,10 +18,23 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('/Users/dcr/AndroidStudioProjects/GradleBuildScript/release_key')
+            storePassword '45995ilgxy'
+            keyAlias 'release_key'
+            keyPassword '45995ilgxy'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+
         }
     }
     compileOptions {
