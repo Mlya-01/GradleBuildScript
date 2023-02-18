@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GradleBuildScript"
 include ':app'
+include ':library1'
+include ':library2'
